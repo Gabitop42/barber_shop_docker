@@ -1,57 +1,22 @@
 package com.tiyay.barberShop.servicio_producto.service;
 
-import com.tiyay.barberShop.servicio_producto.domain.entity.ServicioProducto;
-
 import com.tiyay.barberShop.servicio_producto.domain.entity.dto.request.ServicioProductoRequestDTO;
 import com.tiyay.barberShop.servicio_producto.domain.entity.dto.response.ServicioProductoResponseDTO;
-import com.tiyay.barberShop.servicio_producto.mapper.ServicioProductoMapper;
-import com.tiyay.barberShop.servicio_producto.repository.ServicioProductoRepository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
-@Service
-public class ServicioProductoService {
+public interface ServicioProductoService {
+    List<ServicioProductoResponseDTO> getAll();
 
-    private final ServicioProductoRepository repository;
-    private final ServicioProductoMapper mapper;
+    ServicioProductoResponseDTO getById(Long id);
 
-    public ServicioProductoService(ServicioProductoRepository repository, ServicioProductoMapper mapper) {
-        this.repository = repository;
-        this.mapper = mapper;
-    }
+    List<ServicioProductoResponseDTO> getAllByProducto();
 
-    public List<ServicioProductoResponseDTO> getAll() {
-        return repository.findAll()
-                .stream()
-                .map(mapper::toResponseDTO)
-                .collect(Collectors.toList());
-    }
+    List<ServicioProductoResponseDTO> getAllByServicio();
 
-    public ServicioProductoResponseDTO getById(Long id) {
-        ServicioProducto entity = repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("ServicioProducto no encontrado con id " + id));
-        return mapper.toResponseDTO(entity);
-    }
+    ServicioProductoResponseDTO create(ServicioProductoRequestDTO dto);
 
-    public ServicioProductoResponseDTO create(ServicioProductoRequestDTO dto) {
-        ServicioProducto entity = mapper.toEntity(dto);
-        ServicioProducto saved = repository.save(entity);
-        return mapper.toResponseDTO(saved);
-    }
+    ServicioProductoResponseDTO update(Long id, ServicioProductoRequestDTO dto);
 
-    public ServicioProductoResponseDTO update(Long id, ServicioProductoRequestDTO dto) {
-        ServicioProducto entity = repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("ServicioProducto no encontrado con id " + id));
-        mapper.updateEntity(entity, dto);
-        ServicioProducto updated = repository.save(entity);
-        return mapper.toResponseDTO(updated);
-    }
-
-    public void delete(Long id) {
-        ServicioProducto entity = repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("ServicioProducto no encontrado con id " + id));
-        repository.delete(entity);
-    }
+    void delete(Long id);
 }

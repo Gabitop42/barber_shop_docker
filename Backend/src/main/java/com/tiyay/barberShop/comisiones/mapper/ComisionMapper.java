@@ -6,11 +6,13 @@ import com.tiyay.barberShop.comisiones.domain.entity.dto.response.ComisionRespon
 import com.tiyay.barberShop.usuarios.domain.entity.Usuario;
 import com.tiyay.barberShop.ventas.domain.entity.Venta;
 import com.tiyay.barberShop.comisiones.domain.entity.Comision;
+import org.springframework.stereotype.Component;
 
 
+@Component
 public class ComisionMapper {
 
-    public static Comision toEntity(ComisionRequestDTO dto, Usuario usuario, ServicioProducto servicioProducto, Venta venta) {
+    public Comision toEntity(ComisionRequestDTO dto, Usuario usuario, ServicioProducto servicioProducto, Venta venta) {
         Comision comision = new Comision();
         comision.setMontoComision(dto.montoComision());
         comision.setUsuario(usuario);
@@ -19,7 +21,7 @@ public class ComisionMapper {
         return comision;
     }
 
-    public static ComisionResponseDTO toResponse(Comision comision) {
+    public ComisionResponseDTO toResponse(Comision comision) {
         return new ComisionResponseDTO(
                 comision.getIdComision(),
                 comision.getMontoComision(),

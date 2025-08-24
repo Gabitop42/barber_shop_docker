@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -12,5 +13,6 @@ public interface AsistenciaRepository extends JpaRepository<Asistencia, Integer>
     Optional<Asistencia> findByUsuario_IdUsuarioAndHoraSalidaIsNull(Long idUsuario);
     boolean existsByUsuario_IdUsuarioAndFecha(Long idUsuario, LocalDate fecha);
 
-    boolean existsByFecha(LocalDate fecha);
+    List<Asistencia> findByUsuario_IdUsuario(Long idUsuario);
+
 }

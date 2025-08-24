@@ -2,7 +2,7 @@ package com.tiyay.barberShop.usuarios.controller;
 
 import com.tiyay.barberShop.usuarios.domain.entity.dto.request.UsuarioRequestDTO;
 import com.tiyay.barberShop.usuarios.domain.entity.dto.response.UsuarioResponseDTO;
-import com.tiyay.barberShop.usuarios.service.UsuarioService;
+import com.tiyay.barberShop.usuarios.service.impl.UsuarioServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,37 +14,37 @@ import java.util.List;
 @RequestMapping("/api/usuario")
 public class UsuarioController {
 
-    private final UsuarioService usuarioService;
+    private final UsuarioServiceImpl usuarioServiceImpl;
 
-    public UsuarioController(UsuarioService usuarioService) {
-        this.usuarioService = usuarioService;
+    public UsuarioController(UsuarioServiceImpl usuarioServiceImpl) {
+        this.usuarioServiceImpl = usuarioServiceImpl;
     }
 
     @GetMapping
     public ResponseEntity<List<UsuarioResponseDTO>> getAllUsuarios() {
-        return ResponseEntity.ok(usuarioService.getAllUsuarios());
+        return ResponseEntity.ok(usuarioServiceImpl.getAllUsuarios());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<UsuarioResponseDTO> getUsuarioById(@PathVariable Long id) {
-        return ResponseEntity.ok(usuarioService.getUsuarioById(id));
+        return ResponseEntity.ok(usuarioServiceImpl.getUsuarioById(id));
     }
 
     @PostMapping
     public ResponseEntity<UsuarioResponseDTO> createUsuario(@Valid @RequestBody UsuarioRequestDTO dto) {
-        return new ResponseEntity<>(usuarioService.createUsuario(dto), HttpStatus.CREATED);
+        return new ResponseEntity<>(usuarioServiceImpl.createUsuario(dto), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<UsuarioResponseDTO> updateUsuario(
             @PathVariable Long id,
             @Valid @RequestBody UsuarioRequestDTO dto) {
-        return ResponseEntity.ok(usuarioService.updateUsuario(id, dto));
+        return ResponseEntity.ok(usuarioServiceImpl.updateUsuario(id, dto));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUsuario(@PathVariable Long id) {
-        usuarioService.deleteUsuario(id);
+        usuarioServiceImpl.deleteUsuario(id);
         return ResponseEntity.noContent().build();
     }
 }

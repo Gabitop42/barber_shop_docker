@@ -4,6 +4,7 @@ import com.tiyay.barberShop.asistencia.domain.entity.dto.request.AsistenciaReque
 import com.tiyay.barberShop.asistencia.domain.entity.dto.request.HoraIngresoSalidaRequestDTO;
 import com.tiyay.barberShop.asistencia.domain.entity.dto.response.AsistenciaResponseDTO;
 import com.tiyay.barberShop.asistencia.service.AsistenciaService;
+import com.tiyay.barberShop.asistencia.service.impl.AsistenciaServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ public class AsistenciaController {
 
     private final AsistenciaService asistenciaService;
 
-    public AsistenciaController(AsistenciaService asistenciaService) {
+    public AsistenciaController(AsistenciaServiceImpl asistenciaService) {
         this.asistenciaService = asistenciaService;
     }
 

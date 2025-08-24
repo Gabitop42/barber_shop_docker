@@ -7,14 +7,16 @@ import com.tiyay.barberShop.ventas.domain.entity.Venta;
 import com.tiyay.barberShop.ventas.domain.entity.dto.request.VentaRequestDTO;
 import com.tiyay.barberShop.ventas.domain.entity.dto.response.VentaResponseDTO;
 import com.tiyay.barberShop.ventas.domain.entity.dto.response.DetalleVentaResponseDTO;
+import org.springframework.stereotype.Component;
 
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component
 public class VentaMapper {
 
-    public static Venta toEntity(VentaRequestDTO dto, Usuario usuario, List<ServicioProducto> servicios) {
+    public  Venta toEntity(VentaRequestDTO dto, Usuario usuario, List<ServicioProducto> servicios) {
         Venta venta = new Venta();
         venta.setUsuario(usuario);
 
@@ -38,7 +40,7 @@ public class VentaMapper {
         return venta;
     }
 
-    public static VentaResponseDTO toResponse(Venta venta) {
+    public  VentaResponseDTO toResponse(Venta venta) {
         List<DetalleVentaResponseDTO> detalles = venta.getDetalles().stream()
                 .map(dv -> new DetalleVentaResponseDTO(
                         dv.getId(),

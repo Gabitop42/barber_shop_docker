@@ -4,9 +4,11 @@ package com.tiyay.barberShop.comisiones.controller;
 import com.tiyay.barberShop.comisiones.domain.entity.dto.request.ComisionRequestDTO;
 import com.tiyay.barberShop.comisiones.domain.entity.dto.response.ComisionResponseDTO;
 import com.tiyay.barberShop.comisiones.service.ComisionService;
+import com.tiyay.barberShop.comisiones.service.impl.ComisionServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -27,6 +29,11 @@ public class ComisionController {
     @GetMapping("/{id}")
     public ResponseEntity<ComisionResponseDTO> getById(@PathVariable Long id) {
         return ResponseEntity.ok(comisionService.getById(id));
+    }
+
+    @GetMapping("/total/{id}")
+    public ResponseEntity<BigDecimal> obtenerComisionTotalByUsuarioId(@PathVariable Long id) {
+        return ResponseEntity.ok(comisionService.getComisionTotalByUsuarioId(id));
     }
 
     @PostMapping

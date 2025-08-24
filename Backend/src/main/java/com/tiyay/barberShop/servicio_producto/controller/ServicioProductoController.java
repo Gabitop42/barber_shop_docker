@@ -2,7 +2,7 @@ package com.tiyay.barberShop.servicio_producto.controller;
 
 import com.tiyay.barberShop.servicio_producto.domain.entity.dto.request.ServicioProductoRequestDTO;
 import com.tiyay.barberShop.servicio_producto.domain.entity.dto.response.ServicioProductoResponseDTO;
-import com.tiyay.barberShop.servicio_producto.service.ServicioProductoService;
+import com.tiyay.barberShop.servicio_producto.service.impl.ServicioProductoServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +14,9 @@ import java.util.List;
 @RequestMapping("/api/servicio-producto")
 public class ServicioProductoController {
 
-    private final ServicioProductoService service;
+    private final ServicioProductoServiceImpl service;
 
-    public ServicioProductoController(ServicioProductoService service) {
+    public ServicioProductoController(ServicioProductoServiceImpl service) {
         this.service = service;
     }
 
