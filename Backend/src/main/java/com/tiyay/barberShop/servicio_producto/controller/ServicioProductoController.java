@@ -1,8 +1,9 @@
-package com.tiyay.barberShop.Servicio_Producto.controller;
+package com.tiyay.barberShop.servicio_producto.controller;
 
-import com.tiyay.barberShop.Servicio_Producto.domain.entity.dto.ServicioProductoRequestDTO;
-import com.tiyay.barberShop.Servicio_Producto.domain.entity.dto.ServicioProductoResponseDTO;
-import com.tiyay.barberShop.Servicio_Producto.service.ServicioProductoService;
+import com.tiyay.barberShop.servicio_producto.domain.entity.dto.request.ServicioProductoRequestDTO;
+import com.tiyay.barberShop.servicio_producto.domain.entity.dto.response.ServicioProductoResponseDTO;
+import com.tiyay.barberShop.servicio_producto.service.ServicioProductoService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,13 +31,14 @@ public class ServicioProductoController {
     }
 
     @PostMapping
-    public ResponseEntity<ServicioProductoResponseDTO> create(@RequestBody ServicioProductoRequestDTO dto) {
+    public ResponseEntity<ServicioProductoResponseDTO> create(@Valid @RequestBody ServicioProductoRequestDTO dto) {
         return new ResponseEntity<>(service.create(dto), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ServicioProductoResponseDTO> update(@PathVariable Long id,
-                                                              @RequestBody ServicioProductoRequestDTO dto) {
+    public ResponseEntity<ServicioProductoResponseDTO> update(
+            @PathVariable Long id,
+            @Valid @RequestBody ServicioProductoRequestDTO dto) {
         return ResponseEntity.ok(service.update(id, dto));
     }
 

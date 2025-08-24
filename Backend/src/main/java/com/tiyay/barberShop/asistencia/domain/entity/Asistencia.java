@@ -21,9 +21,12 @@ public class Asistencia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private LocalDate fecha;
-    private LocalDateTime hora_ingreso;
-    private LocalDateTime hora_salida;
+    @Column(name = "hora_ingreso")
+    private LocalDateTime horaIngreso;
+    @Column(name = "hora_salida")
+    private LocalDateTime horaSalida;
     @ManyToOne
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
+
 }

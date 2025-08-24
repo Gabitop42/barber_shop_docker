@@ -1,11 +1,11 @@
-package com.tiyay.barberShop.Servicio_Producto.service;
+package com.tiyay.barberShop.servicio_producto.service;
 
-import com.tiyay.barberShop.Servicio_Producto.domain.entity.ServicioProducto;
+import com.tiyay.barberShop.servicio_producto.domain.entity.ServicioProducto;
 
-import com.tiyay.barberShop.Servicio_Producto.domain.entity.dto.ServicioProductoRequestDTO;
-import com.tiyay.barberShop.Servicio_Producto.domain.entity.dto.ServicioProductoResponseDTO;
-import com.tiyay.barberShop.Servicio_Producto.mapper.ServicioProductoMapper;
-import com.tiyay.barberShop.Servicio_Producto.repository.ServicioProductoRepository;
+import com.tiyay.barberShop.servicio_producto.domain.entity.dto.request.ServicioProductoRequestDTO;
+import com.tiyay.barberShop.servicio_producto.domain.entity.dto.response.ServicioProductoResponseDTO;
+import com.tiyay.barberShop.servicio_producto.mapper.ServicioProductoMapper;
+import com.tiyay.barberShop.servicio_producto.repository.ServicioProductoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,9 +1,9 @@
-package com.tiyay.barberShop.Servicio_Producto.mapper;
+package com.tiyay.barberShop.servicio_producto.mapper;
 
-import com.tiyay.barberShop.Servicio_Producto.domain.entity.ServicioProducto;
+import com.tiyay.barberShop.servicio_producto.domain.entity.ServicioProducto;
 
-import com.tiyay.barberShop.Servicio_Producto.domain.entity.dto.ServicioProductoRequestDTO;
-import com.tiyay.barberShop.Servicio_Producto.domain.entity.dto.ServicioProductoResponseDTO;
+import com.tiyay.barberShop.servicio_producto.domain.entity.dto.request.ServicioProductoRequestDTO;
+import com.tiyay.barberShop.servicio_producto.domain.entity.dto.response.ServicioProductoResponseDTO;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -27,7 +27,6 @@ public class ServicioProductoMapper {
         entity.setDescripcion(dto.descripcion());
         entity.setPrecioBase(dto.precioBase());
         entity.setPorcentajeComision(dto.porcentajeComision());
-        entity.setActivo(dto.activo());
         entity.setTipo(dto.tipo());
         return entity;
     }
@@ -37,7 +36,6 @@ public class ServicioProductoMapper {
         entity.setDescripcion(dto.descripcion());
         entity.setPrecioBase(dto.precioBase());
         entity.setPorcentajeComision(dto.porcentajeComision());
-        entity.setActivo(dto.activo());
         entity.setTipo(dto.tipo());
     }
 }

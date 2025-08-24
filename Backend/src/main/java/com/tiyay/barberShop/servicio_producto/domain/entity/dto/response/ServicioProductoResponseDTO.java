@@ -1,6 +1,6 @@
-package com.tiyay.barberShop.Servicio_Producto.domain.entity.dto;
+package com.tiyay.barberShop.servicio_producto.domain.entity.dto.response;
 
-import com.tiyay.barberShop.Servicio_Producto.domain.entity.ServicioProducto.Tipo;
+import com.tiyay.barberShop.servicio_producto.domain.entity.ServicioProducto.Tipo;
 
 import java.math.BigDecimal;
 

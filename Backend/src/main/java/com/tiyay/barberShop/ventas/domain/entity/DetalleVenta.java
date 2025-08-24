@@ -1,6 +1,6 @@
 package com.tiyay.barberShop.ventas.domain.entity;
 
-import com.tiyay.barberShop.Servicio_Producto.domain.entity.ServicioProducto;
+import com.tiyay.barberShop.servicio_producto.domain.entity.ServicioProducto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,12 +10,7 @@ import lombok.Setter;
 import java.math.BigDecimal;
 
 @Entity
-@Table(
-        name = "detalle_venta",
-        uniqueConstraints = {
-                @UniqueConstraint(name = "uk_venta_servicio", columnNames = {"venta_id", "servicio_producto_id"})
-        }
-)
+@Table(name = "detalle_venta")
 @Getter
 @Setter
 @AllArgsConstructor

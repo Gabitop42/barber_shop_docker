@@ -1,9 +1,9 @@
 package com.tiyay.barberShop.usuarios.controller;
 
-
-import com.tiyay.barberShop.usuarios.domain.entity.dto.UsuarioRequestDTO;
-import com.tiyay.barberShop.usuarios.domain.entity.dto.UsuarioResponseDTO;
+import com.tiyay.barberShop.usuarios.domain.entity.dto.request.UsuarioRequestDTO;
+import com.tiyay.barberShop.usuarios.domain.entity.dto.response.UsuarioResponseDTO;
 import com.tiyay.barberShop.usuarios.service.UsuarioService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,13 +31,14 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<UsuarioResponseDTO> createUsuario(@RequestBody UsuarioRequestDTO dto) {
+    public ResponseEntity<UsuarioResponseDTO> createUsuario(@Valid @RequestBody UsuarioRequestDTO dto) {
         return new ResponseEntity<>(usuarioService.createUsuario(dto), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UsuarioResponseDTO> updateUsuario(@PathVariable Long id,
-                                                            @RequestBody UsuarioRequestDTO dto) {
+    public ResponseEntity<UsuarioResponseDTO> updateUsuario(
+            @PathVariable Long id,
+            @Valid @RequestBody UsuarioRequestDTO dto) {
         return ResponseEntity.ok(usuarioService.updateUsuario(id, dto));
     }
 

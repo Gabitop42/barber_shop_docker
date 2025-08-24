@@ -1,6 +1,6 @@
 package com.tiyay.barberShop.ventas.mapper;
 
-import com.tiyay.barberShop.Servicio_Producto.domain.entity.ServicioProducto;
+import com.tiyay.barberShop.servicio_producto.domain.entity.ServicioProducto;
 import com.tiyay.barberShop.usuarios.domain.entity.Usuario;
 import com.tiyay.barberShop.ventas.domain.entity.DetalleVenta;
 import com.tiyay.barberShop.ventas.domain.entity.Venta;

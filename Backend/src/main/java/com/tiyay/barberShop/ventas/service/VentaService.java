@@ -1,7 +1,7 @@
 package com.tiyay.barberShop.ventas.service;
 
-import com.tiyay.barberShop.Servicio_Producto.domain.entity.ServicioProducto;
-import com.tiyay.barberShop.Servicio_Producto.repository.ServicioProductoRepository;
+import com.tiyay.barberShop.servicio_producto.domain.entity.ServicioProducto;
+import com.tiyay.barberShop.servicio_producto.repository.ServicioProductoRepository;
 import com.tiyay.barberShop.comisiones.domain.entity.dto.request.ComisionRequestDTO;
 import com.tiyay.barberShop.comisiones.service.ComisionService;
 import com.tiyay.barberShop.usuarios.domain.entity.Usuario;

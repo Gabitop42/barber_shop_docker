@@ -1,9 +1,10 @@
 package com.tiyay.barberShop.ventas.controller;
 
-
 import com.tiyay.barberShop.ventas.domain.entity.dto.request.VentaRequestDTO;
 import com.tiyay.barberShop.ventas.domain.entity.dto.response.VentaResponseDTO;
 import com.tiyay.barberShop.ventas.service.VentaService;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,8 +31,8 @@ public class VentaController {
     }
 
     @PostMapping
-    public ResponseEntity<VentaResponseDTO> create(@RequestBody VentaRequestDTO dto) {
-        return ResponseEntity.ok(ventaService.create(dto));
+    public ResponseEntity<VentaResponseDTO> create(@Valid @RequestBody VentaRequestDTO dto) {
+        return new ResponseEntity<>(ventaService.create(dto), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")

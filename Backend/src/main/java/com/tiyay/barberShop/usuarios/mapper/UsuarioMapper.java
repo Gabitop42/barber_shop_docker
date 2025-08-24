@@ -1,9 +1,10 @@
 package com.tiyay.barberShop.usuarios.mapper;
 
+import com.tiyay.barberShop.usuarios.domain.entity.Rol;
 import com.tiyay.barberShop.usuarios.domain.entity.Usuario;
 
-import com.tiyay.barberShop.usuarios.domain.entity.dto.UsuarioRequestDTO;
-import com.tiyay.barberShop.usuarios.domain.entity.dto.UsuarioResponseDTO;
+import com.tiyay.barberShop.usuarios.domain.entity.dto.request.UsuarioRequestDTO;
+import com.tiyay.barberShop.usuarios.domain.entity.dto.response.UsuarioResponseDTO;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,7 +17,7 @@ public class UsuarioMapper {
                 usuario.getNombre(),
                 usuario.getApellido(),
                 usuario.getTelefono(),
-                usuario.getEstado(),
+                usuario.isActivo(),
                 usuario.getRol()
         );
     }
@@ -28,8 +29,7 @@ public class UsuarioMapper {
         usuario.setNombre(dto.nombre());
         usuario.setApellido(dto.apellido());
         usuario.setTelefono(dto.telefono());
-        usuario.setEstado(dto.estado());
-        usuario.setRol(dto.rol());
+        usuario.setRol(Rol.BARBERO);
         return usuario;
     }
 
@@ -39,7 +39,5 @@ public class UsuarioMapper {
         usuario.setNombre(dto.nombre());
         usuario.setApellido(dto.apellido());
         usuario.setTelefono(dto.telefono());
-        usuario.setEstado(dto.estado());
-        usuario.setRol(dto.rol());
     }
 }

@@ -1,4 +1,4 @@
-package com.tiyay.barberShop.usuarios.domain.entity.dto;
+package com.tiyay.barberShop.usuarios.domain.entity.dto.response;
 
 import com.tiyay.barberShop.usuarios.domain.entity.Rol;
 
@@ -8,6 +8,6 @@ public record UsuarioResponseDTO(
         String nombre,
         String apellido,
         String telefono,
-        String estado,
+        boolean estado,
         Rol rol
 ) {}

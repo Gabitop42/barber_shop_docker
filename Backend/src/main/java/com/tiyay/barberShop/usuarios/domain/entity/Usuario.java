@@ -29,7 +29,7 @@ public class Usuario {
     private String apellido;
     private String telefono;
 
-    private String estado;
+    private boolean activo=true;
 
     @OneToMany(mappedBy = "usuario")
     private List<Asistencia> asistencias;

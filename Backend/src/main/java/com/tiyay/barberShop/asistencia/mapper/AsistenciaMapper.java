@@ -2,8 +2,8 @@ package com.tiyay.barberShop.asistencia.mapper;
 
 import com.tiyay.barberShop.asistencia.domain.entity.Asistencia;
 
-import com.tiyay.barberShop.asistencia.domain.entity.dto.AsistenciaRequestDTO;
-import com.tiyay.barberShop.asistencia.domain.entity.dto.AsistenciaResponseDTO;
+import com.tiyay.barberShop.asistencia.domain.entity.dto.request.AsistenciaRequestDTO;
+import com.tiyay.barberShop.asistencia.domain.entity.dto.response.AsistenciaResponseDTO;
 import com.tiyay.barberShop.usuarios.repository.UsuarioRepository;
 import org.springframework.stereotype.Component;
 
@@ -20,8 +20,8 @@ public class AsistenciaMapper {
         return new AsistenciaResponseDTO(
                 asistencia.getId(),
                 asistencia.getFecha(),
-                asistencia.getHora_ingreso(),
-                asistencia.getHora_salida(),
+                asistencia.getHoraIngreso(),
+                asistencia.getHoraSalida(),
                 asistencia.getUsuario().getIdUsuario()
         );
     }
@@ -29,8 +29,8 @@ public class AsistenciaMapper {
     public Asistencia toEntity(AsistenciaRequestDTO dto) {
         Asistencia asistencia = new Asistencia();
         asistencia.setFecha(dto.fecha());
-        asistencia.setHora_ingreso(dto.horaIngreso());
-        asistencia.setHora_salida(dto.horaSalida());
+        asistencia.setHoraIngreso(dto.horaIngreso());
+        asistencia.setHoraSalida(dto.horaSalida());
 
         asistencia.setUsuario(
                 usuarioRepository.findById(dto.idUsuario())
@@ -42,8 +42,8 @@ public class AsistenciaMapper {
 
     public void updateEntity(Asistencia asistencia, AsistenciaRequestDTO dto) {
         asistencia.setFecha(dto.fecha());
-        asistencia.setHora_ingreso(dto.horaIngreso());
-        asistencia.setHora_salida(dto.horaSalida());
+        asistencia.setHoraSalida(dto.horaIngreso());
+        asistencia.setHoraSalida(dto.horaSalida());
         asistencia.setUsuario(
                 usuarioRepository.findById(dto.idUsuario())
                         .orElseThrow(() -> new RuntimeException("Usuario no encontrado con id " + dto.idUsuario()))

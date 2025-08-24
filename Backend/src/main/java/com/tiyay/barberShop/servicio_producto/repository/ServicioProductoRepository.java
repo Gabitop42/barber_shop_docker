@@ -1,6 +1,6 @@
-package com.tiyay.barberShop.Servicio_Producto.repository;
+package com.tiyay.barberShop.servicio_producto.repository;
 
-import com.tiyay.barberShop.Servicio_Producto.domain.entity.ServicioProducto;
+import com.tiyay.barberShop.servicio_producto.domain.entity.ServicioProducto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

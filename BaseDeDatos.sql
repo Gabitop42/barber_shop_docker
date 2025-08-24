@@ -9,7 +9,7 @@ CREATE TABLE usuarios (
     email VARCHAR(255),
     contraseña VARCHAR(255),
     telefono VARCHAR(255),
-    estado VARCHAR(255),
+    activo VARCHAR(255),
     rol ENUM('ADMIN','BARBERO'),
     PRIMARY KEY (id_usuario)
 );

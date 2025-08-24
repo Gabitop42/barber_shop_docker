@@ -1,9 +1,10 @@
-package com.tiyay.barberShop.asistencia.domain.entity.dto;
+package com.tiyay.barberShop.asistencia.domain.entity.dto.response;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public record AsistenciaRequestDTO(
+public record AsistenciaResponseDTO(
+        Integer id,
         LocalDate fecha,
         LocalDateTime horaIngreso,
         LocalDateTime horaSalida,

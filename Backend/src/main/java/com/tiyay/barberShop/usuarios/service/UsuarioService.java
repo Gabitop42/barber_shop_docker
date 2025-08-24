@@ -2,8 +2,8 @@ package com.tiyay.barberShop.usuarios.service;
 
 import com.tiyay.barberShop.usuarios.domain.entity.Usuario;
 
-import com.tiyay.barberShop.usuarios.domain.entity.dto.UsuarioRequestDTO;
-import com.tiyay.barberShop.usuarios.domain.entity.dto.UsuarioResponseDTO;
+import com.tiyay.barberShop.usuarios.domain.entity.dto.request.UsuarioRequestDTO;
+import com.tiyay.barberShop.usuarios.domain.entity.dto.response.UsuarioResponseDTO;
 import com.tiyay.barberShop.usuarios.mapper.UsuarioMapper;
 import com.tiyay.barberShop.usuarios.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;

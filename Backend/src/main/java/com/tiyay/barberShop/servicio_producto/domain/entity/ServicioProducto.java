@@ -1,4 +1,4 @@
-package com.tiyay.barberShop.Servicio_Producto.domain.entity;
+package com.tiyay.barberShop.servicio_producto.domain.entity;
 
 import com.tiyay.barberShop.comisiones.domain.entity.Comision;
 import com.tiyay.barberShop.ventas.domain.entity.DetalleVenta;

@@ -1,6 +1,6 @@
 package com.tiyay.barberShop.comisiones.mapper;
 
-import com.tiyay.barberShop.Servicio_Producto.domain.entity.ServicioProducto;
+import com.tiyay.barberShop.servicio_producto.domain.entity.ServicioProducto;
 import com.tiyay.barberShop.comisiones.domain.entity.dto.request.ComisionRequestDTO;
 import com.tiyay.barberShop.comisiones.domain.entity.dto.response.ComisionResponseDTO;
 import com.tiyay.barberShop.usuarios.domain.entity.Usuario;
