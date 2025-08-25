@@ -8,5 +8,7 @@ public record AsistenciaResponseDTO(
         LocalDate fecha,
         LocalDateTime horaIngreso,
         LocalDateTime horaSalida,
-        Long idUsuario
+        Long idUsuario,
+        String nombreUsuario,
+        String apellidoUsuario
 ) {}

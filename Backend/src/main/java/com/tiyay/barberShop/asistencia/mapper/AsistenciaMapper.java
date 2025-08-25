@@ -22,7 +22,9 @@ public class AsistenciaMapper {
                 asistencia.getFecha(),
                 asistencia.getHoraIngreso(),
                 asistencia.getHoraSalida(),
-                asistencia.getUsuario().getIdUsuario()
+                asistencia.getUsuario().getIdUsuario(),
+                asistencia.getUsuario().getNombre(),
+                asistencia.getUsuario().getApellido()
         );
     }
 
