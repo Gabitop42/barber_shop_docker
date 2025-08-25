@@ -1,5 +1,6 @@
 ---
 import { CreateSaleModal } from "@/components/CreateSaleModal"
+import { SaleTable } from "@/components/SaleTable"
 import Layout from "@/layouts/Layout.astro"
 ---
 
@@ -26,9 +27,14 @@ import Layout from "@/layouts/Layout.astro"
       </div>
       <div>
         <h1 class="text-3xl font-bold text-marfil">Ventas</h1>
-        <p class="text-marfil/70">Gestiona las ventas y transacciones de la barbería</p>
+        <p class="text-marfil/70">
+          Gestiona las ventas y transacciones de la barbería
+        </p>
       </div>
     </div>
     <CreateSaleModal client:load />
   </div>
+  <main>
+    <SaleTable client:load />
+  </main>
 </Layout>
