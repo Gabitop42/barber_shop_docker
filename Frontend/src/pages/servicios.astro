@@ -1,0 +1,41 @@
+---
+import { CreateServiceModal } from "@/components/CreateServiceModal"
+import { ServiceTable } from "@/components/ServiceTable"
+import Layout from "@/layouts/Layout.astro"
+---
+
+<Layout title="Servicios">
+  <div class="flex items-center justify-between mb-8">
+    <div class="flex items-center gap-4">
+      <div class="bg-burdeos rounded-lg p-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="size-8 text-marfil"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M6 7m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path
+            d="M6 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path
+            d="M8.6 8.6l10.4 10.4"></path><path d="M8.6 15.4l10.4 -10.4"
+          ></path></svg
+        >
+      </div>
+      <div>
+        <h1 class="text-3xl font-bold text-marfil">Servicios y productos</h1>
+        <p class="text-marfil/70">
+          Gestiona los servicios y productos de la barbería
+        </p>
+      </div>
+    </div>
+    <CreateServiceModal client:load />
+  </div>
+  <main>
+    <ServiceTable client:load />
+  </main>
+</Layout>

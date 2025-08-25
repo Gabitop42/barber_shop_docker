@@ -1,0 +1,69 @@
+---
+interface Props {
+  id: string
+  name?: string
+  checked?: boolean
+  disabled?: boolean
+  size?: "sm" | "md" | "lg"
+  theme?: "carbon" | "burdeos" | "marfil"
+  class?: string
+}
+
+const {
+  id,
+  name,
+  checked = false,
+  disabled = false,
+  size = "md",
+  theme = "carbon",
+  class: className = "",
+  ...rest
+} = Astro.props
+
+const sizeClasses = {
+  sm: {
+    wrapper: "w-7.5 h-4",
+    circle:
+      "w-3.5 h-3.5 top-0.25 left-0.25 peer-checked:translate-x-3.5",
+  },
+  md: {
+    wrapper: "w-10 h-6",
+    circle: "w-5 h-5 top-0.5 left-0.5 peer-checked:translate-x-4",
+  },
+  lg: {
+    wrapper: "w-12 h-7",
+    circle: "w-6 h-6 top-0.5 left-0.5 peer-checked:translate-x-5",
+  },
+}
+
+const themesClasess = {
+  carbon: "peer-checked:bg-carbon peer-checked:border peer-checked:border-white/20",
+  burdeos: "peer-checked:bg-burdeos peer-checked:border peer-checked:border-white/20",
+  marfil: "peer-checked:bg-marfil peer-checked:border peer-checked:border-white/20",
+}
+
+const sizeClass = sizeClasses[size] || sizeClasses["md"]
+const themeClass = themesClasess[theme] || themesClasess["carbon"]
+---
+<label
+  for={id}
+  class=`relative inline-block w-6 ${sizeClass.wrapper} ${disabled ? "opacity-50 cursor-not-allowed" : ""} ${className}`
+>
+  <input
+    id={id}
+    name={name}
+    type="checkbox"
+    checked={checked}
+    disabled={disabled}
+    class="sr-only peer"
+    {...rest}
+  />
+  <div
+    class=`${sizeClass.wrapper} bg-gray-400 ${themeClass} rounded-full transition-colors duration-300`
+  >
+  </div>
+  <div
+    class=`absolute bg-white rounded-full transition-transform duration-300 ${sizeClass.circle}`
+  >
+  </div>
+</label>

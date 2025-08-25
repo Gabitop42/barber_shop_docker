@@ -1,0 +1,28 @@
+---
+import "@/styles/global.css"
+import { LoginForm } from "@/components/LoginForm"
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.svg" />
+    <title> Barberia Bigotes | Inicia sesion</title>
+  </head>
+  <body>
+    <div class="flex h-dvh">
+      <div class="relative w-full bg-[url('/barber-pattern.png')] bg-cover flex items-center justify-center">
+        <div class="absolute inset-0 bg-carbon/50"></div>
+        <div class="z-10 border border-white/20 bg-black/50 shadow rounded-2xl flex flex-col p-6 items-center text-white">
+          <img src="/logo.png" class="w-40 rounded-2xl mb-4" alt="" />
+          <h1 class="text-2xl font-bold">Iniciar Sesión</h1>
+          <p class="text-white/80 mb-4">Accede al sistema de gestión de Barbería Bigotes</p>
+          <LoginForm client:load />
+        </div>
+      </div>
+      <img src="/barbershop.png" class="h-full" alt="" />
+    </div>
+  </body>
+</html>

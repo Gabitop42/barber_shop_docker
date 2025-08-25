@@ -1,0 +1,35 @@
+---
+import "@/styles/global.css"
+import { Sidebar } from "@/components/Sidebar"
+import { ClientRouter } from "astro:transitions"
+interface Props {
+  title: string
+}
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barberia Bigotes | {title}</title>
+    <link rel="shortcut icon" href="favicon.svg" />
+    <ClientRouter />
+  </head>
+  <body>
+    <div class="flex h-screen bg-carbon">
+      <Sidebar client:load />
+      <main class="flex-1 overflow-auto relative">
+        <div
+          class="bg-[url(/barber-pattern.png)] bg-repeat w-full h-full absolute"
+          style="background-size: 200px;"
+        >
+        </div>
+        <div class="relative p-8 min-h-full bg-carbon/90">
+          <slot />
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

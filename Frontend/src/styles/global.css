@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-carbon: oklch(0.2178 0 0); /* color de fondo */
+  --color-burdeos: oklch(0.3263 0.1087 16.54); /* color primario */
+  --color-marfil: oklch(0.8991 0.0611 87.4); /* color secundario */
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-carbon) inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #fff;
+}
