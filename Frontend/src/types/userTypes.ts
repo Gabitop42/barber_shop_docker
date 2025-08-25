@@ -7,3 +7,9 @@ export interface User {
   estado: boolean
   rol: "BARBERO" | "ADMIN"
 }
+
+export interface UserAttend {
+  idUsuario: number
+  nombre: string
+  apellido: string
+}

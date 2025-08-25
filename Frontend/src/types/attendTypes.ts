@@ -4,4 +4,6 @@ export interface Attend {
   horaIngreso: string
   horaSalida: string
   idUsuario: number
+  nombreUsuario: string
+  apellidoUsuario: string
 }
