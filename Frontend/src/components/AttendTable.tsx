@@ -81,7 +81,7 @@ export const AttendTable = () => {
             {attends.map((attend) => (
               <tr key={attend.id} className="hover:bg-marfil/5">
                 <td className="px-4 py-3 text-marfil font-medium whitespace-nowrap">
-                  {attend.idUsuario}
+                  {attend.nombreUsuario} {attend.apellidoUsuario}
                 </td>
                 <td className="px-4 py-3 text-marfil/80 whitespace-nowrap">
                   {attend.fecha}
@@ -134,7 +134,7 @@ export const AttendTable = () => {
                         </button>
                         <DeleteButton
                           resource="asistencia"
-                          id={attend.idUsuario!}
+                          id={attend.id}
                           onDeleted={() => {
                             fetchAttend()
                           }}
