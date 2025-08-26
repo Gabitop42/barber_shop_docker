@@ -1,6 +1,6 @@
 FROM openjdk:21
 
-COPY target/barberShop-0.0.1.jar barber_shop.jar
+COPY /target/barberShop-0.0.1.jar barber_shop.jar
 
 EXPOSE 9090
 
