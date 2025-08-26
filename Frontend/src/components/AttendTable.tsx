@@ -15,7 +15,7 @@ export const AttendTable = () => {
 
   const fetchAttend = async () => {
     try {
-      const res = await fetch("http://localhost:8080/api/asistencia")
+      const res = await fetch("http://localhost:9090/api/asistencia")
       if (!res.ok) throw new Error("Error al obtener asistencias")
       const data: Attend[] = await res.json()
       console.log(data)

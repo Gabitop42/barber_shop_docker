@@ -39,7 +39,7 @@ export const CreateServiceModal = () => {
     console.log(JSON.stringify(data))
     try {
       setSubmitting(true)
-      const res = await fetch("http://localhost:8080/api/servicio-producto", {
+      const res = await fetch("http://localhost:9090/api/servicio-producto", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

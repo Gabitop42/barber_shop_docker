@@ -15,7 +15,7 @@ export const UserTable = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch("http://localhost:8080/api/usuario")
+      const res = await fetch("http://localhost:9090/api/usuario")
       if (!res.ok) throw new Error("Error al obtener usuarios")
       const data: User[] = await res.json()
       console.log(data)

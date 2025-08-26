@@ -15,7 +15,7 @@ export const ServiceTable = () => {
 
   const fetchServices = async () => {
     try {
-      const res = await fetch("http://localhost:8080/api/servicio-producto")
+      const res = await fetch("http://localhost:9090/api/servicio-producto")
       if (!res.ok) throw new Error("Error al obtener servicios")
       const data: Service[] = await res.json()
       console.log(data)

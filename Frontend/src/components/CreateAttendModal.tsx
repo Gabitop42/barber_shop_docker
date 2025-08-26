@@ -19,7 +19,7 @@ export const CreateAttendModal = () => {
   useEffect(() => {
     const loadUsers = async () => {
       try {
-        const res = await fetch("http://localhost:8080/api/usuario")
+        const res = await fetch("http://localhost:9090/api/usuario")
         if (!res.ok) throw new Error("No se pudo cargar usuarios")
         const data = await res.json()
         setUsers(data)

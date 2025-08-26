@@ -1,0 +1,38 @@
+services:
+  barbershop:
+    build: Backend
+    ports:
+      - "9090:9090"
+    environment:
+      DB_URL: jdbc:mysql://barber_shop:3306/barber_shop_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+      DB_USER_NAME: root
+      DB_PASSWORD: root
+    restart: always
+    depends_on:
+      barber_shop:
+        condition: service_healthy
+  barber_shop:
+    image: mysql
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: barber_shop_db
+    restart: always
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      timeout: 10s
+      retries: 10
+  frontend:
+    build: Frontend
+    container_name: frontend
+    environment:
+      # Esta URL debe ser accesible por el NAVEGADOR del usuario
+      PUBLIC_API_BASE_URL: "http://localhost:4321"
+    ports:
+      - "4321:4321" # entra por http://localhost:8080
+    depends_on:
+      barbershop:
+        condition: service_started
+    restart: always

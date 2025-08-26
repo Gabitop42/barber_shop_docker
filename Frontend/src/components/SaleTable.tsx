@@ -15,7 +15,7 @@ export const SaleTable = () => {
 
   const fetchSales = async () => {
     try {
-      const res = await fetch("http://localhost:8080/api/venta")
+      const res = await fetch("http://localhost:9090:9090/api/venta")
       if (!res.ok) throw new Error("Error al obtener ventas")
       const data: Sale[] = await res.json()
       console.log(data)

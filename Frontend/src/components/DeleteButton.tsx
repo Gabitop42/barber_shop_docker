@@ -18,7 +18,7 @@ export const DeleteButton = ({ resource, id, onDeleted }: Props) => {
     setError(null)
 
     try {
-      const res = await fetch(`http://localhost:8080/api/${resource}/${id}`, {
+      const res = await fetch(`http://localhost:9090/api/${resource}/${id}`, {
         method: "DELETE",
       })
 
